@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Aishwarya ❤️</title>
+
+<style>
+body {
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background: black;
+    color:white;
+    text-align:center;
+}
+
+/* Password screen */
+#passwordScreen {
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+input {
+    padding:12px;
+    font-size:18px;
+    border-radius:10px;
+    border:none;
+}
+
+button {
+    padding:12px 25px;
+    font-size:18px;
+    border-radius:20px;
+    border:none;
+    margin-top:10px;
+    background:#ff4e8a;
+    color:white;
+    cursor:pointer;
+}
+
+/* Main content */
+#mainContent {
+    display:none;
+}
+
+/* Floating name */
+.name {
+    position:absolute;
+    width:100%;
+    top:20%;
+    font-size:50px;
+    font-weight:bold;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0);}
+    50% { transform: translateY(-20px);}
+}
+
+/* Message */
+.message {
+    position:absolute;
+    width:100%;
+    top:35%;
+    font-size:24px;
+}
+
+/* Photo */
+.photo {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.photo img {
+    width:250px;
+    border-radius:20px;
+    box-shadow:0 0 30px pink;
+}
+
+/* Hearts */
+.heart {
+    position:absolute;
+    color:red;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10%);
+        opacity:1;
+    }
+    100% {
+        transform: translateY(110vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Password Screen -->
+<div id="passwordScreen">
+    <h2>Enter Password ❤️</h2>
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Unlock</button>
+</div>
+
+<!-- Main Content -->
+<div id="mainContent">
+
+<div class="name"> My Aisss ❤️</div>
+
+<div class="message">
+Happy Rose Day, Aishwarya ❤️🌹<br><br>
+
+On this Rose Day, February 7, 2026, I don’t just give you a rose… I give you a piece of my heart.  
+Just like a rose, you brought colour into my ordinary life, fragrance into my silent days,  
+and meaning into moments I never understood before you.  
+
+Every heartbeat of mine whispers your name. Every smile of mine carries your reason.  
+You are not just someone I love… You are the feeling I never want to lose.  
+
+If I could, I would give you a rose for every second you made my life beautiful.  
+But for now, accept this one promise — I am yours, today, tomorrow, and always. 🌹❤️
+</div>
+
+<div class="photo">
+<img src="https://photos.app.goo.gl/3KVRwV249n8HJvH48">
+</div>
+
+<audio autoplay loop>
+<source src=""audio.mp3"" type="audio/mp3">
+</audio>
+
+</div>
+
+<script>
+/* Password */
+function checkPassword() {
+    var pass = document.getElementById("password").value;
+    
+    if(pass === "aishu143") { // change password here
+        document.getElementById("passwordScreen").style.display="none";
+        document.getElementById("mainContent").style.display="block";
+    }
+    else {
+        alert("Wrong password ❤️");
+    }
+}
+
+/* Hearts animation */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+    
+    heart.style.left = Math.random()*100+"vw";
+    heart.style.fontSize = Math.random()*30+20+"px";
+    heart.style.animationDuration = Math.random()*3+3+"s";
+    
+    document.body.appendChild(heart);
+    
+    setTimeout(()=>heart.remove(),6000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
