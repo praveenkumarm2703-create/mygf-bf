@@ -9,8 +9,8 @@ body {
     margin:0;
     padding:0;
     overflow:hidden;
-    font-family: 'Segoe UI', sans-serif;
-    background: black;
+    font-family:'Segoe UI', sans-serif;
+    background:black;
     color:white;
     text-align:center;
 }
@@ -45,6 +45,10 @@ button {
     cursor:pointer;
 }
 
+button:hover {
+    background:#ff2e74;
+}
+
 /* Main content */
 #mainContent {
     display:none;
@@ -68,23 +72,11 @@ button {
 /* Message */
 .message {
     position:absolute;
-    width:100%;
+    width:80%;
+    left:10%;
     top:35%;
     font-size:24px;
-}
-
-/* Photo */
-.photo {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-}
-
-.photo img {
-    width:250px;
-    border-radius:20px;
-    box-shadow:0 0 30px pink;
+    line-height:1.6;
 }
 
 /* Hearts */
@@ -119,28 +111,31 @@ button {
 <!-- Main Content -->
 <div id="mainContent">
 
-<div class="name"> My Aisss ❤️</div>
+    <div class="name">My bf/gf ❤️</div>
 
-<div class="message">
-Happy Rose Day, gf ❤️🌹<br><br>
+    <div class="message">
+        Happy Rose Day, gf ❤️🌹<br><br>
 
-On this Rose Day, February 7, 2026, I don’t just give you a rose… I give you a piece of my heart.  
-Just like a rose, you brought colour into my ordinary life, fragrance into my silent days,  
-and meaning into moments I never understood before you.  
+        On this Rose Day, February 7, 2026, I don’t just give you a rose… I give you a piece of my heart.  
+        Just like a rose, you brought colour into my ordinary life, fragrance into my silent days,  
+        and meaning into moments I never understood before you.  
 
-Every heartbeat of mine whispers your name. Every smile of mine carries your reason.  
-You are not just someone I love… You are the feeling I never want to lose.  
+        Every heartbeat of mine whispers your name. Every smile of mine carries your reason.  
+        You are not just someone I love… You are the feeling I never want to lose.  
 
-If I could, I would give you a rose for every second you made my life beautiful.  
-But for now, accept this one promise — I am yours, today, tomorrow, and always. 🌹❤️
+        If I could, I would give you a rose for every second you made my life beautiful.  
+        But for now, accept this one promise — I am yours, today, tomorrow, and always. 🌹❤️
+    </div>
 
+</div>
 
 <script>
 /* Password */
 function checkPassword() {
+
     var pass = document.getElementById("password").value;
-    
-    if(pass === "aishu143") { // change password here
+
+    if(pass === "143") {
         document.getElementById("passwordScreen").style.display="none";
         document.getElementById("mainContent").style.display="block";
     }
@@ -151,17 +146,20 @@ function checkPassword() {
 
 /* Hearts animation */
 function createHeart() {
+
     const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.innerHTML="❤️";
-    
+
     heart.style.left = Math.random()*100+"vw";
     heart.style.fontSize = Math.random()*30+20+"px";
     heart.style.animationDuration = Math.random()*3+3+"s";
-    
+
     document.body.appendChild(heart);
-    
-    setTimeout(()=>heart.remove(),6000);
+
+    setTimeout(function(){
+        heart.remove();
+    },6000);
 }
 
 setInterval(createHeart,300);
