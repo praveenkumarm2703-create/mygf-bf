@@ -135,7 +135,7 @@ function checkPassword() {
 
     var pass = document.getElementById("password").value;
 
-    if(pass === "aishu143") {
+    if(pass === "143") {
         document.getElementById("passwordScreen").style.display="none";
         document.getElementById("mainContent").style.display="block";
     }
